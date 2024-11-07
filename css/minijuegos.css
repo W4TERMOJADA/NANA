@@ -1,0 +1,85 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffe0e6;
+    margin: 0;
+    overflow: hidden;
+}
+.game-container {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 15px;
+}
+.card {
+    width: 100px;
+    height: 100px;
+    background-color: #f8b8c4;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+.card img {
+    display: none;
+    width: 80px;
+    height: 80px;
+}
+/* Contenedor de corazones flotantes */
+.hearts {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none;
+    display: none;
+}
+.heart {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-image: url('pngnanaflores.png'); /* Imagen de corazón PNG */
+    background-size: cover;
+    animation: floatHearts 2s ease-in infinite;
+    opacity: 0;
+}
+/* Animación de corazones */
+@keyframes floatHearts {
+    0% {
+        transform: translateY(0) scale(0.8);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-150px) scale(1.2);
+        opacity: 0;
+    }
+}
+/* Mensaje romántico */
+.message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 182, 193, 0.9);
+    color: #d1005a;
+    padding: 20px;
+    border-radius: 15px;
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: bold;
+    display: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1.5s ease forwards;
+}
+/* Animación de aparición del mensaje */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translate(-50%, -60%); }
+    to { opacity: 1; transform: translate(-50%, -50%); }
+}
