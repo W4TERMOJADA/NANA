@@ -1,0 +1,93 @@
+*{ /*para seleccionar todas las etiquetas*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url(images/nanafachera.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100vh;  /**fondo tamaño**/
+}
+
+h2{
+    text-align: center;
+    font-size: 40px;
+    font-family: sans-serif;
+    margin-top: 80px;
+    text-shadow: 0px 0px 6px black;
+    color: aqua;
+}
+
+.content-all{
+    width: 210px; /**En vez de poner el 100% podemos ir jugando con los pixeles**/
+    perspective: 1000px; /**Esto hace que la rotacion se vea bien, tocando esto, podemos cambiar el tamaño**/
+    position: relative;
+    margin: auto; /**lo centramos, como siempre**/
+    margin-top: 50px;
+
+}
+
+.content-carrousel{
+    width: 100%; /** conclusion sacada mas adelante: jugamos con el tamaño en los pixeles de content all, y luego auqui ponemos el 
+    100%, asi no solaparan las imagenes**/
+    position: absolute;
+    animation: rotar 10s infinite linear; /**linear para que no pare**/
+    transform-style:preserve-3d; /**Le damos ese efecto en 3D**/
+
+}
+
+.content-carrousel:hover{ 
+    animation-play-state: paused; /**para que pare al poner el raton**/
+    cursor: pointer; /**el raton se convierte en manita omg**/
+
+}
+
+.content-carrousel figure{ 
+    width: 100%;
+    height: 200px;  /**por defecto 100% creo. Lo limitaremos para que las imagenes se vean todas del mismo tamaño**/
+    overflow: hidden; /**sin esto no se recortan las iomagenes ni se centran, obvio tendre que centrar
+    las imagenes ooo recortarlas externamente, o hacerlas todas horizontales pq hay algunas muy cortas**/
+    position: absolute; /**En este punto se amontonan una encima de otra**/
+    box-shadow: 0px 0px 20px 0px black;
+    transition: all 300ms;
+}
+
+.content-carrousel figure:hover{ 
+    box-shadow: 0px 0px 0px 0px black;
+    transition: all 300ms;
+}
+
+.content-carrousel:hover{
+    animation-play-state: paused;
+}
+
+.content-carrousel figure:nth-child(1){transform: rotateY(0deg) translateZ(300px);} /**360grados entre 9(pq la primera no cuenta, 0 grados) da 40 grados por imagen**/
+.content-carrousel figure:nth-child(2){transform: rotateY(40deg) translateZ(300px);}
+.content-carrousel figure:nth-child(3){transform: rotateY(80deg) translateZ(300px);}
+.content-carrousel figure:nth-child(4){transform: rotateY(120deg) translateZ(300px);}
+.content-carrousel figure:nth-child(5){transform: rotateY(160deg) translateZ(300px);}
+.content-carrousel figure:nth-child(6){transform: rotateY(200deg) translateZ(300px);}
+.content-carrousel figure:nth-child(7){transform: rotateY(240deg) translateZ(300px);}
+.content-carrousel figure:nth-child(8){transform: rotateY(280deg) translateZ(300px);}
+.content-carrousel figure:nth-child(9){transform: rotateY(320deg) translateZ(300px);}
+.content-carrousel figure:nth-child(10){transform: rotateY(360deg) translateZ(300px);}
+
+.content-carrousel img{
+    width: 100%;
+}
+.content-carrousel img:hover{ 
+    transform: scale(1.2); /**cuando pasemos el raton, se agrandará (efecto zoom, no mas grande**/
+    transition: all 300ms; /**que tarde unos ms para que no se agrande de golpe, queda mucho mas
+    fluido**/
+}
+
+
+@keyframes rotar{
+    form{
+        transform: rotateY(0deg);
+    }to{
+        transform: rotateY(360deg)
+    }
+}

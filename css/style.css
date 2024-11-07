@@ -1,0 +1,200 @@
+        /* Configuración General */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif; /*PONER ALGUNA MAS ROMANTICA*/
+        }
+        
+        body {
+            background-color: #fff0f6;
+            color: #333;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        /* Efecto de Corazones al Entrar */
+        .heart-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-image: url('https://cdn-icons-png.flaticon.com/512/833/833472.png');
+            background-size: cover;
+            animation: float 10s linear infinite;
+        }
+
+        /* Animación de corazones flotando */
+        @keyframes float {
+            0% { transform: translateY(100vh) scale(0); opacity: 1; }
+            50% { opacity: 1; }
+            100% { transform: translateY(-100vh) scale(1.5); opacity: 0; }
+        }
+
+        /* Encabezado */
+        .header {
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+            width: 100%;
+            padding: 20px;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1;
+            position: sticky; /**se supone q hace q el header te persiga**/
+        }
+        .enlaces_grupo{
+            text-align: center;
+        }
+        .enlaces{
+            margin-right: 20px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: white;
+            font-size: 20px;
+            border: 2px solid transparent;
+            padding: 5px;
+            transition: .4s ease;  
+        }
+
+        .enlaces:hover{
+            color: pink;
+        }
+
+        nav{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 450px;
+        }
+        .logotitulo{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nanaflores{
+            width: 25px;
+        }
+
+        /* Sección de Imágenes y Video */
+        .media-section {
+            margin: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .image-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .image-gallery img {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.1);
+        }
+
+        .love-video {
+            margin-top: 20px;
+            width: 80%;
+            border-radius: 10px;
+        }
+
+        /* Carta animada */
+        .letter-section {
+            margin: 40px 20px;
+            background-color: #fff5f5;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            max-width: 600px;
+            margin: auto;
+            margin-top: 80px;
+        }
+
+        .letter-content {
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+
+        .letter-content:nth-child(1) { animation-delay: 0.5s; }
+        .letter-content:nth-child(2) { animation-delay: 2s; }
+        .letter-content:nth-child(3) { animation-delay: 3.5s; }
+
+        /* Animaciones */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Juegos */
+        .games-section {
+            display: flex;
+            justify-content: space-around;
+            margin: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .find-heart-grid, .match-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            gap: 10px;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .heart-cell, .match-card {
+            width: 100px;
+            height: 100px;
+            background-color: #ffe4e1;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .heart-cell:hover, .match-card:hover {
+            transform: scale(1.1);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Botón */
+        .love-button-section {
+            margin: 20px 0;
+        }
+
+        /*pie de página */
+        footer {
+            background-color: #fad0c4;
+            width: 100%;
+            padding: 10px;
+            color: #fff;
+            font-size: 14px;
+            margin: 0;
+        }

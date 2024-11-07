@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/nanafachera.jpg" type="image/jpg">
+    <title>NANA💖</title>
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="keywords" content="NANA, nana">
+    <meta name="author" content="W4TER">
+    <meta name="description" content="Pagina web para mi novia">
+</head>
+<body>
+    <!--ENCABEZADO-->
+    <header class="header">
+        <nav>
+            <div class="logotitulo">
+                <img class="nanaflores" src="img/pngnanaflores.png" alt="nanalogo">
+                <h1>NANA 💖</h1>
+            </div>
+
+            <div class="enlaces_grupo">
+                <a class="enlaces" href="index.html">carta</a>
+                <a class="enlaces" href="contador.html">contador</a>
+        <!--        <a class="enlaces" href="contador.html">Video</a> -->
+                <a class="enlaces" href="fotos.html">fotitos</a>
+                
+            </div>
+        </nav>
+    </header>
+    <!-- Efecto de Corazones al Entrar -->
+    <div class="heart-animation"></div>
+
+    <!-- Carta animada -->
+    <section class="letter-section">
+        <h2>Cuarto mes</h2>
+        <div class="animated-letter">
+            <p class="letter-content">TEXTO</p>
+            <p class="letter-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore in corrupti reprehenderit atque deserunt cupiditate illum tempora error quas neque, veritatis maxime at. Repellendus nostrum sed laudantium laborum aspernatur veniam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Et earum aut unde omnis suscipit, veniam nobis explicabo officiis blanditiis modi qui, aperiam ratione, voluptatum ut dicta sequi quaerat vitae impedit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum quisquam voluptate, suscipit cupiditate dolores minus cumque quaerat recusandae deleniti sit asperiores ea magni hic, soluta corporis, molestiae vitae deserunt facilis! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus molestias deleniti aut fugiat beatae facilis aliquam quo quia illo id nihil voluptate odio, exercitationem praesentium sit natus velit quis labore. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium sed quos, nisi inventore quo temporibus tempora labore eligendi perferendis doloremque aut. Obcaecati modi officia exercitationem deleniti asperiores dolore repellendus at. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam ex odit, voluptates rem reiciendis eligendi eveniet possimus, amet quibusdam temporibus ipsa placeat consectetur hic qui, corrupti error officia porro quidem? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus provident sit nemo ut voluptatibus ab odio natus? Dolor esse optio, ipsum quam minus nobis molestias ratione vero! Doloremque, perspiciatis a?</p>
+            <p class="letter-content">Te amo❤️</p>
+        </div>
+    </section>
+
+    <!-- Botón "Te Amo" con mensaje -->
+    <section class="love-button-section">
+        <button id="love-button">Te Amo ❤️</button>
+        <p id="love-message" class="hidden">TEAMOMUTTIITITMO 💖</p>
+    </section>
+    <!-- Sección de imágenes y video -->
+    <section class="media-section">
+        <div class="image-gallery">
+<!--falta añadir imagenes adaptadas!!!-->
+            <img src="img/nana1.jpeg" alt="nanayyo">
+            <img src="img/nana2.jpeg" alt="nanayyo2">
+            <img src="img/nana3.jpeg" alt="NANANSN">
+        </div>
+
+    <!-- Juegos -->
+    <section class="games-section">
+        <!-- Juego 1: Encuentra el Corazón -->
+        <div class="find-heart">
+            <h2>Encuentra a NANA </h2>
+            <div class="find-heart-grid">
+                <div class="heart-cell"></div>
+                <div class="heart-cell"></div>
+                <div class="heart-cell heart-hidden"></div>
+                <div class="heart-cell"></div>
+                <div class="heart-cell"></div>
+                <div class="heart-cell"></div>
+            </div>
+            <p id="heart-message" class="hidden">GENIO encontraste a nana (es mia)</p>
+        </div>
+
+        <!-- Juego 2: Coincidencias de Amor -->
+        <div class="match-game">
+            <h2>Juego de Coincidencias 💞</h2>
+            <p>Haz clic para emparejar los elementos de amor:</p>
+            <div class="match-grid">
+                <div class="match-card">❤️</div>
+                <div class="match-card">💋</div>
+                <div class="match-card">🌹</div>
+                <div class="match-card">❤️</div>
+                <div class="match-card">💋</div>
+                <div class="match-card">🌹</div>
+            </div>
+            <p id="match-message" class="hidden">¡Felicitaciones! Has emparejado todos los elementos ❤️</p>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>❤️❤️❤️❤️</p>
+    </footer>
+
+    <script>
+        // Efecto de Corazones al Entrar
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = Math.random() * 3 + 5 + "s";
+            document.querySelector(".heart-animation").appendChild(heart);
+
+            setTimeout(() => heart.remove(), 8000);
+        }
+
+        setInterval(createHeart, 300);
+
+        // Botón "Te Amo"
+        document.getElementById("love-button").addEventListener("click", () => {
+            document.getElementById("love-message").classList.toggle("hidden");
+        });
+
+        // Juego 1: Encuentra el Corazón
+        document.querySelectorAll(".heart-cell").forEach(cell => {
+            cell.addEventListener("click", () => {
+                if (cell.classList.contains("heart-hidden")) {
+                    cell.backgroundColor = "#ff6f61";
+                    document.getElementById("heart-message").classList.remove("hidden");
+                }
+            });
+        });
+
+        // Juego 2: Coincidencias
+        let firstCard = null;
+        let secondCard = null;
+
+        document.querySelectorAll(".match-card").forEach(card => {
+            card.addEventListener("click", () => {
+                card.classList.add("flipped");
+                if (!firstCard) {
+                    firstCard = card;
+                } else if (!secondCard) {
+                    secondCard = card;
+                    if (firstCard.innerHTML === secondCard.innerHTML) {
+                        firstCard.style.backgroundColor = "#ff6f61";
+                        secondCard.style.backgroundColor = "#ff6f61";
+                        firstCard = null;
+                        secondCard = null;
+                        checkMatchCompletion();
+                    } else {
+                        setTimeout(() => {
+                            firstCard.classList.remove("flipped");
+                            secondCard.classList.remove("flipped");
+                            firstCard = null;
+                            secondCard = null;
+                        }, 1000);
+                    }
+                }
+            });
+        });
+
+        function checkMatchCompletion() {
+            const flippedCards = document.querySelectorAll(".match-card.flipped");
+            if (flippedCards.length === document.querySelectorAll(".match-card").length) {
+                document.getElementById("match-message").classList.remove("hidden");
+            }
+        }
+    </script>
+</body>
+</html>
