@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Encuentra la Imagen</title>
+<link rel="stylesheet" href="css/minijuegos.css">
+</head>
+<body>
+
+<div class="game-container">
+    <div class="card" onclick="revealCard(this)">
+        <img src="img/pngnanacasco.png" alt="Imagen Romántica">
+    </div>
+    <div class="card" onclick="revealCard(this)"></div>
+    <div class="card" onclick="revealCard(this)"></div>
+    <div class="card" onclick="revealCard(this)"></div>
+    <div class="card" onclick="revealCard(this)"></div>
+    <div class="card" onclick="revealCard(this)"></div>
+</div>
+
+<div class="hearts" id="heartsContainer"></div>
+<div class="message" id="winMessage">¡Felicidades! encontraste a NANA💖(es mia).</div>
+
+<script>
+    let gameWon = false; // Variable para rastrear si el jugador ha ganado
+
+    function revealCard(card) {
+        if (gameWon) return; // Prevenir repetición del efecto si ya se ganó
+
+        const img = card.querySelector('img');
+        if (img) {
+            img.style.display = 'block';
+            gameWon = true; // Marcar como ganado
+            showHearts(card); // Activar el efecto de corazones alrededor de la tarjeta ganadora
+            showMessage(); // Mostrar mensaje romántico al ganar
+        } else {
+            alert('¡Intenta otra vez!');
+        }
+    }
+
+    function showHearts(card) {
+        const heartsContainer = document.getElementById('heartsContainer');
+        heartsContainer.innerHTML = '';
+        heartsContainer.style.display = 'block';
+
+        // Obtener la posición de la tarjeta ganadora
+        const rect = card.getBoundingClientRect();
+        const cardX = rect.left + rect.width / 2;
+        const cardY = rect.top + rect.height / 2;
+
+        // Generar 4-5 corazones grandes alrededor de la tarjeta ganadora
+        for (let i = 0; i < 5; i++) {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            
+            // Calcular posiciones aleatorias cerca de la tarjeta ganadora
+            const offsetX = (Math.random() - 0.5) * 50; // Ajusta este valor para control de dispersión horizontal
+            const offsetY = (Math.random() - 0.5) * 50; // Ajusta este valor para control de dispersión vertical
+            
+            heart.style.left = `${cardX + offsetX}px`;
+            heart.style.top = `${cardY + offsetY}px`;
+            heartsContainer.appendChild(heart);
+
+            setTimeout(() => {
+                heart.style.animationDelay = `${Math.random() * 1}s`;
+                heart.style.opacity = '1';
+            }, 100);
+        }
+
+        // Ocultar corazones después de 2 segundos
+        setTimeout(() => {
+            heartsContainer.style.display = 'none';
+        }, 2000);
+    }
+
+    function showMessage() {
+        const winMessage = document.getElementById('winMessage');
+        winMessage.style.display = 'block';
+
+        // Ocultar mensaje después de 3 segundos
+        setTimeout(() => {
+            winMessage.style.display = 'none';
+        }, 3000);
+    }
+</script>
+</body>
+</html>
