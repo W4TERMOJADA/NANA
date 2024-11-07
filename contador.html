@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>NANA</title>
+<title>Contador amor</title>
 
 <style type="text/css">
 @font-face {
@@ -11,6 +11,7 @@
 }
 </style>
 
+<link rel="shortcut icon" href="img/nanafachera.jpg" type="image/jpg">
 <link href="css/default.css" type="text/css" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <script type="text/javascript" src="js/jquery.js"></script>
@@ -21,21 +22,24 @@
 
 <body>
 
-	    <!--ENCABEZADO-->
-		<header class="header">
-			<nav>
-				<h1>NANA 💖</h1>
-	
-				<div>
-					<a class="enlaces" href="contador.html">Contador</a>
-					<a class="enlaces" href="contador.html">Mas Fotos</a>
-			<!--        <a class="enlaces" href="contador.html">Video</a> -->
-					<a class="enlaces" href="contador.html">Lo que sea</a>
-					
-				</div>
-			</nav>
-		</header>
+    <!--ENCABEZADO-->
+    <header class="header">
+        <nav>
+            <div class="logotitulo">
+                <img class="nanaflores" src="img/pngjuanynana.png" alt="nanalogo">
+                <h1>NANA 💖</h1>
+            </div>
 
+            <div class="enlaces_grupo">
+                <a class="enlaces" href="index.html">carta</a>
+                <a class="enlaces" href="contador.html">contador</a>
+                <a class="enlaces" href="fotos.html">fotitos</a>
+                <a class="enlaces" href="minijuegos.html">juegote</a>
+            </div>
+        </nav>
+    </header>
+	    <!-- Efecto de Corazones al Entrar -->
+		<div class="heart-animation"></div>
 <div id="mainDiv">
 	<div id="content">
 		<div id="code">
@@ -45,24 +49,8 @@
 			<span class="space"/><span class="comments">*/</span><br />
 			<span class="keyword">Juan</span> Iznardo<br />
 			<span class="keyword">Nahir</span> Elalle<br />
-			<span class="comments">Desde ese dia.. </span><br />
-			textoamoroso<br />
-			<span class="comments">// Nos amamos</span><br />
-			The girl loves the boy;<br />
-			<span class="comments">// desde ese dia</span><br />
-			imposible separarme de ti<br />
-			<span class="comments">// Both wind and snow all over the sky.</span><br />
-			<span class="comments">// Whether on foot or 5 kilometers.</span><br />
-			<span class="keyword">The boy</span> is very <span class="keyword">happy</span>;<br />
-			<span class="keyword">The girl</span> is also very <span class="keyword">happy</span>;<br />
-			<span class="placeholder"/><span class="comments">// Whether it is right now</span><br />
-			<span class="placeholder"/><span class="comments">// Still in the distant future.</span><br />
-			<span class="placeholder"/>The boy has but one dream;<br />
-			<span class="comments">// The boy hopes the girl would still be happy.</span><br />
-			<br>
-			<br>
-			nunca me cansare de decirte:<br />
-			TE AMO MI AMOR;<br />
+			<span class="comments">TE HECHO DE MENOS</span><br />
+			te amo💖<br />
 		</div>
 		<div id="loveHeart">
 			<canvas id="garden"></canvas>
@@ -113,6 +101,20 @@ if (!document.createElement('canvas').getContext) {
 	adjustCodePosition();
 	$("#code").typewriter();
 }
+
+        // Efecto de Corazones al Entrar
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = Math.random() * 3 + 5 + "s";
+            document.querySelector(".heart-animation").appendChild(heart);
+
+            setTimeout(() => heart.remove(), 8000);
+        }
+
+        setInterval(createHeart, 300);
+
 </script>
 </body>
 </html>

@@ -5,7 +5,6 @@
 }
 
 body{
-    background-image: url(images/nanafachera.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100vh;  /**fondo tamaño**/
@@ -46,7 +45,7 @@ h2{
 
 .content-carrousel figure{ 
     width: 100%;
-    height: 200px;  /**por defecto 100% creo. Lo limitaremos para que las imagenes se vean todas del mismo tamaño**/
+    height: 280px;  /**por defecto 100% creo. Lo limitaremos para que las imagenes se vean todas del mismo tamaño**/
     overflow: hidden; /**sin esto no se recortan las iomagenes ni se centran, obvio tendre que centrar
     las imagenes ooo recortarlas externamente, o hacerlas todas horizontales pq hay algunas muy cortas**/
     position: absolute; /**En este punto se amontonan una encima de otra**/

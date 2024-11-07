@@ -3,14 +3,36 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Encuentra la Imagen</title>
+<title>Minijuegos NANA</title>
+<link rel="shortcut icon" href="img/nanafachera.jpg" type="image/jpg">
+<link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/minijuegos.css">
 </head>
 <body>
+    <!--ENCABEZADO-->
+    <header class="header">
+        <nav>
+            <div class="logotitulo">
+                <img class="nanaflores" src="img/pngnanarockstar.png" alt="nanalogo">
+                <h1>NANA 💖</h1>
+            </div>
+
+            <div class="enlaces_grupo">
+                <a class="enlaces" href="index.html">carta</a>
+                <a class="enlaces" href="contador.html">contador</a>
+                <a class="enlaces" href="fotos.html">fotitos</a>
+                <a class="enlaces" href="minijuegos.html">juegote</a>
+            </div>
+        </nav>
+    </header>
+    <!-- Efecto de Corazones al Entrar -->
+	<div class="heart-animation"></div>
+
+    <h1 class="titulo">Encuentra a nana </h1>
 
 <div class="game-container">
     <div class="card" onclick="revealCard(this)">
-        <img src="img/pngnanacasco.png" alt="Imagen Romántica">
+        <img src="img/pngnanacasco.png" alt="Imagen">
     </div>
     <div class="card" onclick="revealCard(this)"></div>
     <div class="card" onclick="revealCard(this)"></div>
@@ -22,7 +44,36 @@
 <div class="hearts" id="heartsContainer"></div>
 <div class="message" id="winMessage">¡Felicidades! encontraste a NANA💖(es mia).</div>
 
+<div class="pregunta">
+    <h2 class="titulo">Cuanto te amo?</h2>
+    <div class="options">
+        <button class="option-button" onclick="checkGuess(false)">un poco</button>
+        <button class="option-button" onclick="checkGuess(false)">bastante</button>
+        <button class="option-button" onclick="checkGuess(true)">MUTTITIITITIMO</button>
+    </div>
+
+    <div class="image-container" id="correctImage">
+        <img src="img/corazonmanos.jpeg" alt="Imagen">
+    </div>
+</div>
+
+
+
 <script>
+                // Efecto de Corazones al Entrar
+                function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = Math.random() * 3 + 5 + "s";
+            document.querySelector(".heart-animation").appendChild(heart);
+
+            setTimeout(() => heart.remove(), 8000);
+        }
+
+        setInterval(createHeart, 300);
+
+
     let gameWon = false; // Variable para rastrear si el jugador ha ganado
 
     function revealCard(card) {
@@ -35,7 +86,7 @@
             showHearts(card); // Activar el efecto de corazones alrededor de la tarjeta ganadora
             showMessage(); // Mostrar mensaje romántico al ganar
         } else {
-            alert('¡Intenta otra vez!');
+            alert('Prueba de nuevo, te amo💖');
         }
     }
 
@@ -82,6 +133,15 @@
         setTimeout(() => {
             winMessage.style.display = 'none';
         }, 3000);
+    }
+
+    function checkGuess(isCorrect) {
+        if (isCorrect) {
+            document.getElementById('correctImage').style.display = 'block';
+            alert('OBVIAMENTE SI 😠');
+        } else {
+            alert('te has confundido sin verguenza');
+        }
     }
 </script>
 </body>

@@ -1,15 +1,24 @@
-body {
+/*body {
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #ffe0e6;
+    background-color: #ffe0e6;  TOCAMOS EL BODDY EN EL STYLES.CSS ademas un display flex aqui me rompe toda la pantalla XDD
     margin: 0;
     overflow: hidden;
+} */
+
+.titulo{
+    color: #ff9a9e;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 .game-container {
     display: grid;
+    justify-content: center;
+    margin-top: 50px;
     grid-template-columns: repeat(3, 100px);
     gap: 15px;
 }
@@ -45,7 +54,7 @@ body {
     position: absolute;
     width: 50px;
     height: 50px;
-    background-image: url('pngnanaflores.png'); /* Imagen de corazón PNG */
+    background-image: url('pngnanaflores.png'); /* Imagen de nanaflores PNG */
     background-size: cover;
     animation: floatHearts 2s ease-in infinite;
     opacity: 0;
@@ -82,4 +91,36 @@ body {
 @keyframes fadeIn {
     from { opacity: 0; transform: translate(-50%, -60%); }
     to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+.pregunta {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+    margin: 0;
+}
+.image-container {
+    width: 200px;
+    height: 200px;
+    display: none;
+    margin-top: 20px;
+}
+.image-container img {
+    width: 100%;
+    height: 100%;
+}
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.option-button {
+    padding: 10px;
+    background-color: #f8b8c4;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }

@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrusel 3D no js by W4TER</title>
+    <title>Fotitos NANA</title>
+    <link rel="shortcut icon" href="img/nanafachera.jpg" type="image/jpg">
 
 <!--INTERFAZ-->
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css'>
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,700'>
+
     <!--<link rel="stylesheet" href="css/interfazimg.css">    ALGO FALLA EN ESTE CSS-->
 
 
@@ -16,32 +18,36 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-        <!--ENCABEZADO-->
-        <header class="header">
-            <nav>
-                <h1>NANA 💖</h1>
-    
-                <div class="enlaces_grupo">
-                    <a class="enlaces" href="index.html">carta</a>
-                    <a class="enlaces" href="contador.html">Contador</a>
-            <!--        <a class="enlaces" href="contador.html">Video</a> -->
-                    <a class="enlaces" href="fotos.html">fotitos</a>
-                    
-                </div>
-            </nav>
-        </header>
+    <!--ENCABEZADO-->
+    <header class="header">
+      <nav>
+          <div class="logotitulo">
+              <img class="nanaflores" src="img/pngnanaposando.png" alt="nanalogo">
+              <h1>NANA 💖</h1>
+          </div>
+
+          <div class="enlaces_grupo">
+              <a class="enlaces" href="index.html">carta</a>
+              <a class="enlaces" href="contador.html">contador</a>
+              <a class="enlaces" href="fotos.html">fotitos</a>
+              <a class="enlaces" href="minijuegos.html">juegote</a>
+          </div>
+      </nav>
+  </header>
+  	    <!-- Efecto de Corazones al Entrar -->
+         <div class="heart-animation"></div>
     <div class="content-all">
         <div class="content-carrousel">
-            <figure><img src="img/nana1.jpeg"></figure>
+            <figure><img src="img/nanajuangym2.jpeg"></figure>
             <figure><img src="img/nana2.jpeg"></figure>
-            <figure><img src="img/nana3.jpeg"></figure>
+            <figure><img src="img/nanajuanbeso.jpeg"></figure>
             <figure><img src="img/nana4.jpeg"></figure>
             <figure><img src="img/nana1.jpeg"></figure>
             <figure><img src="img/nana2.jpeg"></figure>
-            <figure><img src="img/nana3.jpeg"></figure>
+            <figure><img src="img/gorritos.jpeg"></figure>
             <figure><img src="img/nana4.jpeg"></figure>
             <figure><img src="img/nana1.jpeg"></figure>
-            <figure><img src="img/nana1.jpeg"></figure>
+            <figure><img src="img/leones.jpeg"></figure>
         </div>
     </div>
 
@@ -110,6 +116,22 @@
      <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
      <script src="js/interfazscripts.js"></script>
     -->
+
+   <script>
+              // Efecto de Corazones al Entrar
+            function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = Math.random() * 3 + 5 + "s";
+            document.querySelector(".heart-animation").appendChild(heart);
+
+            setTimeout(() => heart.remove(), 8000);
+      }
+
+      setInterval(createHeart, 300);
+
+   </script>
 
 </body>
 </html>
