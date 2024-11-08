@@ -24,7 +24,8 @@ h2{
     perspective: 1000px; /**Esto hace que la rotacion se vea bien, tocando esto, podemos cambiar el tamaño**/
     position: relative;
     margin: auto; /**lo centramos, como siempre**/
-    margin-top: 50px;
+    margin-top: 100px;
+    margin-bottom: 40%; /**añadido mas tarde para que se vea bien abajo el footer**/
 
 }
 
